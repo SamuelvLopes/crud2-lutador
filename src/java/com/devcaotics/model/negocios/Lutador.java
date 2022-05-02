@@ -19,14 +19,14 @@ public class Lutador {
     private String senha;
     private double peso;
     private double altura;
-    private Date nascimento;
+    private String nascimento;
     private boolean destro;
     private String curso;
     private String artMarcial;
     private String contatoEmergencia;
 
-    public Lutador(int id, String nome, String apelido, double peso, double altura, Date nascimento, boolean destro, String curso, String artMarcial, String contatoEmergencia) {
-        this.id = id;
+    public Lutador(String nome, String apelido, double peso, double altura, String nascimento, boolean destro, String curso, String artMarcial, String contatoEmergencia) {
+       
         this.nome = nome;
         this.apelido = apelido;
         this.peso = peso;
@@ -41,11 +41,11 @@ public class Lutador {
     public Lutador() {
     }
     
-    public int getId() {
+    public int GetId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void SetId(int id) {
         this.id = id;
     }
 
@@ -81,11 +81,11 @@ public class Lutador {
         this.altura = altura;
     }
 
-    public Date getNascimento() {
+    public String getNascimento() {
         return nascimento;
     }
 
-    public void setNascimento(Date nascimento) {
+    public void setNascimento(String nascimento) {
         this.nascimento = nascimento;
     }
 

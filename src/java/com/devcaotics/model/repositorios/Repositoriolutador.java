@@ -1,41 +1,35 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.devcaotics.model.repositorios;
 
-import com.devcaotics.model.negocios.Lutador;
 import java.util.ArrayList;
 import java.util.List;
-
-/**
- *
- * @author ALUNO
- */
-public class RepositorioLutadorMemo {
+import com.devcaotics.model.negocios.Lutador;
+public class Repositoriolutador {
     
-    private static RepositorioLutadorMemo myself = null;
+    private static Repositoriolutador myself = null;
     
-    private List<Lutador> lutadores = null;
+    private static List<Lutador> lutadores= null;
     private static int lastId = 1;
     
-    private RepositorioLutadorMemo(){
-        this.lutadores = new ArrayList<>();
+    private Repositoriolutador(){
+        this.lutadores= new ArrayList<>();
     }
     
-    public static RepositorioLutadorMemo getCurrentInstance(){
+    public static Repositoriolutador getCurrentInstance(){
         
         if(myself == null)
-            myself = new RepositorioLutadorMemo();
+            myself = new Repositoriolutador();
         
         return myself;
         
     }
     
-    public void inserir(Lutador l){
+    public static void inserir(Lutador l){
         l.setId(lastId++);
-        this.lutadores.add(l);
+        lutadores.add(l);
     }
     
     public void alterar(Lutador l){
@@ -44,15 +38,16 @@ public class RepositorioLutadorMemo {
             if(lAux.getId() == l.getId()){
                 lAux.setApelido(l.getApelido());
                 lAux.setNome(l.getNome());
-                lAux.setApelido(l.getApelido());
+                lAux.setSenha(l.getSenha());
                 lAux.setPeso(l.getPeso());
                 lAux.setAltura(l.getAltura());
-                lAux.setNascimento(l.getNascimento());
                 lAux.setDestro(l.isDestro());
                 lAux.setCurso(l.getCurso());
                 lAux.setArtMarcial(l.getArtMarcial());
+                lAux.setNascimento(l.getNascimento());
                 lAux.setContatoEmergencia(l.getContatoEmergencia());
-                
+              
+              
                 return;
             }
             

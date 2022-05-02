@@ -3,9 +3,14 @@
     Created on : 20/04/2022, 18:59:53
     Author     : ALUNO
 --%>
-
+<%@page import="com.devcaotics.model.negocios.Lutador"%>
+<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
+<% 
+            Lutador l = (Lutador)request.getAttribute("local");
+        %>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -16,7 +21,7 @@
             
             <h1>Cadastro de Lutador</h1>
 
-            <form class="form" method="post"  action="LutadorS?a=cadastrar">
+            <form class="form" method="post"  action="LutadorS?a=altr">
 
                 <table class="table">
                     <tr>
@@ -24,7 +29,7 @@
                             Nome: 
                         </td>
                         <td>
-                            <input type="text" name="nome"  /> 
+                            <input type="text" value="<%=l.getNome() %>" name="nome"  /> 
                         </td>
                     </tr>
                     <tr>
@@ -32,7 +37,7 @@
                             Apelido 
                         </td>
                         <td>
-                            <input type="text" name="apelido" /> 
+                            <input type="text" value="<%=l.getApelido() %>" name="apelido" /> 
                         </td>
                     </tr>
                     <tr>
@@ -40,7 +45,7 @@
                             Peso(kg)
                         </td>
                         <td>
-                            <input type="number" min="0" name="peso" step="0.01" id="input" /> 
+                            <input value="<%=l.getPeso() %>" type="number" min="0" name="peso" step="0.01" id="input" /> 
                         </td>
                     </tr>
                     <tr>
@@ -48,7 +53,7 @@
                             Altura(M)
                         </td>
                         <td>
-                            <input type="number" name="altura"  step="0.01" id="input2" min="0"/> 
+                            <input value="<%=l.getAltura() %>" type="number" name="altura"  step="0.01" id="input2" min="0"/> 
                         </td>
                     </tr>
                     
@@ -57,7 +62,7 @@
                             Nascimento 
                         </td>
                         <td>
-                            <input type="date" name="dtnascimento"  /> 
+                            <input type="date" value="<%=l.getNascimento() %>" name="dtnascimento"  /> 
                         </td>
                     </tr>
                     
@@ -74,7 +79,7 @@
                             Curso 
                         </td>
                         <td>
-                            <input type="text" name="curso"  /> 
+                            <input type="text" value="<%=l.getCurso() %>" name="curso"  /> 
                         </td>
                     </tr>
                     <tr>
@@ -82,7 +87,7 @@
                             Arte Marcial 
                         </td>
                         <td>
-                            <input type="text" name="artmarcial"  /> 
+                            <input type="text" value="<%=l.getArtMarcial() %>" name="artmarcial"  /> 
                         </td>
                     </tr>
                     
@@ -91,7 +96,7 @@
                             Contato Emergencia
                         </td>
                         <td>
-                            <input type="text" name="contatoemergencia"  /> 
+                            <input type="text" value="<%=l.getContatoEmergencia() %>" name="contatoemergencia"  /> 
                         </td>
                     </tr>
                     <tr>
